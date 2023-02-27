@@ -1,18 +1,29 @@
 package practice;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.TreeMap;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.Date;
 
-public class Task {
-	
-	Map<Date, String>dayTask = new HashMap<Date, String>();
-	
-	DateTimeFormatter f = DateTimeFormatter.ofPattern("yyyy年MM月dd日");
-	LocalDate d1 = LocalDate.parse("2021年10月23日", f);
-	
-	dayTask.put(d1, "牛乳を買う");
+public class Task implements Comparable<Task> {
+
+	LocalDate d;
+	String t;
+
+	public Task(LocalDate day, String task) {
+
+		// LocalDateのパターンを設定
+		DateTimeFormatter f = DateTimeFormatter.ofPattern("yyyy年MM月dd日");
+
+		// タスクを格納する
+		this.d = LocalDate.parse("day", f);
+		this.t = task;
+	}
+
+	public LocalDate getDay() {
+		return this.d;
+	}
+
+	@Override
+	public LocalDate compareTo(Task other) {
+		return;
+	}
 }
